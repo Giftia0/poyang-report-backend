@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.poyangreportbackend.mapper.ReportFormMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.poyangreportbackend.domain.ReportForm">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="detail" column="detail" jdbcType="VARCHAR"/>
+            <result property="lng" column="lng" jdbcType="VARCHAR"/>
+            <result property="lat" column="lat" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+            <result property="district" column="district" jdbcType="VARCHAR"/>
+            <result property="township" column="township" jdbcType="VARCHAR"/>
+            <result property="poi" column="poi" jdbcType="VARCHAR"/>
+            <result property="isForbid" column="is_forbid" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="category" column="category" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="operatorId" column="operator_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,title,
+        detail,lng,lat,
+        address,city,district,
+        township,poi,is_forbid,
+        create_time,type,category,
+        status,operator_id
+    </sql>
+</mapper>

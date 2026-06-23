@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.poyangreportbackend.mapper.ReportStatusMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.poyangreportbackend.domain.ReportStatus">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="reportId" column="report_id" jdbcType="BIGINT"/>
+            <result property="idx" column="idx" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="action" column="action" jdbcType="VARCHAR"/>
+            <result property="operatorId" column="operator_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,report_id,idx,
+        status,action,operator_id,
+        create_time
+    </sql>
+</mapper>

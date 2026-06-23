@@ -1,0 +1,48 @@
+#wx:
+#  appId: "<REDACTED_WECHAT_APP_ID>"
+#  appSecret: "e341a7b8c309e5b7e4decd0ee9a5d610"
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: poyang-report-backend
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://<DB_HOST>:<DB_PORT>/<DB_NAME>?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: <REDACTED_USERNAME>
+    password:
+    <REDACTED_PASSWORD> com.alibaba.druid.pool.DruidDataSource
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      password:
+      <REDACTED_PASSWORD> 60s
+      lettuce:
+        pool:
+          max-idle: 30
+          max-active: 8
+          max-wait: 10000
+          min-idle: 10
+  servlet:
+    multipart:
+      max-file-size: 10MB        # 设置单个文件最大大小为10MB
+      max-request-size: 100MB    # 设置多个文件大小为100MB
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+imgPath: "https://poyang-report-1314510469.cos.ap-guangzhou.myqcloud.com"
